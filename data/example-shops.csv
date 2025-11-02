@@ -1,0 +1,4 @@
+name,type,address,city,state,zip,phone,website,description
+"Vintage Treasures","antique_shop","123 Main Street","Springfield","MA","01101","413-555-0100","https://vintagetreasures.com",""
+"The Thrift Store","thrift_store","456 Oak Avenue","Springfield","MA","01102","413-555-0200","",""
+"Estate Sales Co","estate_sale_company","789 Elm Street","Boston","MA","02101","617-555-0300","https://estatesales.com",""
