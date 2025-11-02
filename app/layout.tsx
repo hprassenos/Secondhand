@@ -35,6 +35,7 @@ export default function RootLayout({
                 <h4 className="font-semibold mb-4">Discover</h4>
                 <ul className="space-y-2 text-sm text-vintage-300">
                   <li><a href="/directory" className="hover:text-white">Shop Directory</a></li>
+                  <li><a href="/locations/states" className="hover:text-white">Browse by Location</a></li>
                   <li><a href="/yard-sales" className="hover:text-white">Yard Sales</a></li>
                   <li><a href="/estate-sales" className="hover:text-white">Estate Sales</a></li>
                   <li><a href="/reference" className="hover:text-white">Reference Library</a></li>
