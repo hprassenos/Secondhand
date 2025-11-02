@@ -1,197 +1,171 @@
+import { Metadata } from 'next'
 import Link from 'next/link'
-import { BookOpenIcon, MagnifyingGlassIcon, SparklesIcon, PaintBrushIcon, BuildingLibraryIcon } from '@heroicons/react/24/outline'
+import { supabase } from '@/lib/supabase'
+import { ReferenceCategory } from '@/types'
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 
-export const metadata = {
-  title: 'Reference Library - Secondhand Finds',
-  description: 'Learn about hallmarks, makers marks, patterns, and identify your vintage treasures',
+export const metadata: Metadata = {
+  title: 'Reference Library | Identify Antiques, Hallmarks & Makers',
+  description:
+    'Comprehensive reference guide for identifying antiques, china, glass, silver, and collectibles. Browse thousands of makers, patterns, and hallmarks with photos.',
+  openGraph: {
+    title: 'Antique & Vintage Reference Library',
+    description:
+      'Identify your antiques and collectibles with our comprehensive reference library featuring makers, patterns, and hallmarks.',
+  },
 }
 
-export default function ReferencePage() {
-  const categories = [
-    {
-      title: 'China & Pottery Marks',
-      description: 'Identify makers marks, backstamps, and date codes on ceramics and porcelain',
-      icon: <SparklesIcon className="h-8 w-8" />,
-      slug: 'china-pottery',
-      color: 'blue',
-      count: 'Coming Soon',
-    },
-    {
-      title: 'Silver Hallmarks',
-      description: 'Decode hallmarks on sterling silver, silverplate, and other precious metals',
-      icon: <BuildingLibraryIcon className="h-8 w-8" />,
-      slug: 'silver-hallmarks',
-      color: 'purple',
-      count: 'Coming Soon',
-    },
-    {
-      title: 'Glass Patterns',
-      description: 'Identify depression glass, carnival glass, and other vintage glassware patterns',
-      icon: <SparklesIcon className="h-8 w-8" />,
-      slug: 'glass-patterns',
-      color: 'green',
-      count: 'Coming Soon',
-    },
-    {
-      title: 'Furniture Makers',
-      description: 'Learn about antique furniture makers, styles, and identifying characteristics',
-      icon: <PaintBrushIcon className="h-8 w-8" />,
-      slug: 'furniture-makers',
-      color: 'amber',
-      count: 'Coming Soon',
-    },
-  ]
+async function getCategories() {
+  const { data, error } = await supabase
+    .from('reference_categories')
+    .select('*')
+    .order('sort_order')
+
+  if (error) {
+    console.error('Error fetching categories:', error)
+    return []
+  }
+
+  return data as ReferenceCategory[]
+}
+
+export default async function ReferenceLibraryPage() {
+  const categories = await getCategories()
 
   return (
     <div className="min-h-screen bg-vintage-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Hero Section */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-vintage-600 rounded-full mb-6">
-            <BookOpenIcon className="h-10 w-10 text-white" />
-          </div>
-          <h1 className="text-5xl font-bold text-vintage-900 mb-4">Reference Library</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Your comprehensive guide to identifying hallmarks, makers marks, patterns, and learning
-            about your vintage treasures
+      {/* Hero Section */}
+      <div className="bg-gradient-to-b from-vintage-100 to-vintage-50 border-b border-vintage-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <h1 className="text-4xl md:text-5xl font-bold text-vintage-900 mb-4">
+            Reference Library
+          </h1>
+          <p className="text-xl text-vintage-700 mb-8 max-w-3xl">
+            Identify your antiques, china, glass, silver, and collectibles with our
+            comprehensive reference guide featuring thousands of makers, patterns, and hallmarks.
           </p>
+
+          {/* Search Bar */}
+          <div className="max-w-2xl">
+            <Link
+              href="/reference/search"
+              className="flex items-center gap-3 bg-white border-2 border-vintage-300 rounded-lg px-4 py-3 hover:border-vintage-500 transition-colors"
+            >
+              <MagnifyingGlassIcon className="h-6 w-6 text-vintage-600" />
+              <span className="text-vintage-600">
+                Search for makers, patterns, hallmarks...
+              </span>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Categories Grid */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 className="text-2xl font-bold text-vintage-900 mb-6">
+          Browse by Category
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {categories.map((category) => (
+            <Link
+              key={category.id}
+              href={`/reference/category/${category.slug}`}
+              className="card hover:shadow-lg transition-shadow group"
+            >
+              <div className="flex items-start gap-4">
+                {category.icon && (
+                  <div className="text-4xl" aria-hidden="true">
+                    {category.icon}
+                  </div>
+                )}
+                <div className="flex-1">
+                  <h3 className="font-bold text-vintage-900 mb-2 group-hover:text-vintage-600 transition-colors">
+                    {category.name}
+                  </h3>
+                  <p className="text-sm text-gray-600 line-clamp-3">
+                    {category.description}
+                  </p>
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
 
-        {/* Search Section */}
-        <div className="max-w-2xl mx-auto mb-16">
+        {/* Info Section */}
+        <div className="mt-16 grid md:grid-cols-3 gap-8">
           <div className="card">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Search the Reference Library
-            </label>
-            <div className="relative">
-              <MagnifyingGlassIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search for makers, hallmarks, patterns..."
-                className="w-full pl-10 pr-4 py-3 border border-vintage-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-vintage-500"
-                disabled
-              />
-            </div>
-            <p className="text-xs text-gray-500 mt-2">
-              Search functionality coming soon! We're building our reference database.
+            <h3 className="font-bold text-vintage-900 mb-2">
+              Thousands of Reference Photos
+            </h3>
+            <p className="text-sm text-gray-600">
+              High-quality images from multiple angles help you identify your pieces.
+              Perfect for Google Lens searches.
+            </p>
+          </div>
+
+          <div className="card">
+            <h3 className="font-bold text-vintage-900 mb-2">
+              Expert Identification Tips
+            </h3>
+            <p className="text-sm text-gray-600">
+              Learn how to spot authentic pieces, identify reproductions, and date your
+              collectibles accurately.
+            </p>
+          </div>
+
+          <div className="card">
+            <h3 className="font-bold text-vintage-900 mb-2">
+              Community Contributions
+            </h3>
+            <p className="text-sm text-gray-600">
+              Help grow our library by submitting photos and information about your
+              pieces. All submissions are reviewed by our team.
             </p>
           </div>
         </div>
 
-        {/* Categories Grid */}
-        <div>
-          <h2 className="text-2xl font-bold text-vintage-900 mb-6">Browse Categories</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {categories.map((category) => (
-              <div
-                key={category.slug}
-                className="card hover:shadow-lg transition-shadow cursor-not-allowed opacity-75"
+        {/* Popular Searches */}
+        <div className="mt-12">
+          <h2 className="text-xl font-bold text-vintage-900 mb-4">Popular Searches</h2>
+          <div className="flex flex-wrap gap-2">
+            {[
+              'Depression Glass',
+              'Wedgwood',
+              'Waterford Crystal',
+              'Sterling Silver Marks',
+              'Roseville Pottery',
+              'Carnival Glass',
+              'Fiesta Ware',
+              'Royal Doulton',
+              'Pyrex Patterns',
+              'Cambridge Glass',
+              'Blue Willow',
+              'Haviland China',
+            ].map((term) => (
+              <Link
+                key={term}
+                href={`/reference/search?q=${encodeURIComponent(term)}`}
+                className="px-3 py-1 bg-vintage-100 text-vintage-700 rounded-full text-sm hover:bg-vintage-200 transition-colors"
               >
-                <div className="flex items-start gap-4">
-                  <div className={`p-3 rounded-lg bg-${category.color}-100 text-${category.color}-600`}>
-                    {category.icon}
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-start justify-between mb-2">
-                      <h3 className="text-xl font-bold text-vintage-900">{category.title}</h3>
-                      <span className="inline-flex items-center px-2 py-1 rounded-full text-xs bg-vintage-100 text-vintage-700">
-                        {category.count}
-                      </span>
-                    </div>
-                    <p className="text-gray-600">{category.description}</p>
-                  </div>
-                </div>
-              </div>
+                {term}
+              </Link>
             ))}
           </div>
         </div>
 
-        {/* How It Works Section */}
-        <div className="bg-gradient-to-br from-vintage-100 to-vintage-200 rounded-2xl p-8 md:p-12">
-          <h2 className="text-3xl font-bold text-vintage-900 mb-6 text-center">
-            How to Use the Reference Library
+        {/* Contribute CTA */}
+        <div className="mt-12 bg-vintage-100 border border-vintage-300 rounded-lg p-8 text-center">
+          <h2 className="text-2xl font-bold text-vintage-900 mb-3">
+            Have something to add?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-vintage-600 rounded-full text-white font-bold text-xl mb-4">
-                1
-              </div>
-              <h3 className="font-bold text-vintage-900 mb-2">Browse or Search</h3>
-              <p className="text-gray-700">
-                Explore categories or search for specific makers, marks, or patterns
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-vintage-600 rounded-full text-white font-bold text-xl mb-4">
-                2
-              </div>
-              <h3 className="font-bold text-vintage-900 mb-2">Compare & Identify</h3>
-              <p className="text-gray-700">
-                Match your item's marks or characteristics with our reference images
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-vintage-600 rounded-full text-white font-bold text-xl mb-4">
-                3
-              </div>
-              <h3 className="font-bold text-vintage-900 mb-2">Learn & Value</h3>
-              <p className="text-gray-700">
-                Discover the history, age, and typical values of your treasures
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Contributing Section */}
-        <div className="mt-12 card bg-blue-50 border-blue-200">
-          <div className="flex flex-col md:flex-row items-start gap-6">
-            <div className="flex-1">
-              <h2 className="text-2xl font-bold text-vintage-900 mb-3">
-                Help Us Build the Library
-              </h2>
-              <p className="text-gray-700 mb-4">
-                The Reference Library is under construction! We're carefully curating information
-                about hallmarks, makers marks, and patterns. This takes time to ensure accuracy.
-              </p>
-              <p className="text-gray-700">
-                Are you an expert in antiques or vintage items? We'd love your help in building
-                this resource for the community.
-              </p>
-            </div>
-            <div className="flex-shrink-0">
-              <Link href="/contact" className="btn-primary whitespace-nowrap">
-                Contact Us
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Popular Resources (Placeholder) */}
-        <div className="mt-12">
-          <h2 className="text-2xl font-bold text-vintage-900 mb-6">Getting Started Guides</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="card">
-              <h3 className="font-bold text-vintage-900 mb-2">How to Photograph Marks</h3>
-              <p className="text-sm text-gray-600 mb-3">
-                Tips for capturing clear photos of hallmarks and backstamps for identification
-              </p>
-              <span className="text-xs text-vintage-600">Coming Soon</span>
-            </div>
-            <div className="card">
-              <h3 className="font-bold text-vintage-900 mb-2">Dating Your Antiques</h3>
-              <p className="text-sm text-gray-600 mb-3">
-                Learn how to determine the age of antique and vintage items
-              </p>
-              <span className="text-xs text-vintage-600">Coming Soon</span>
-            </div>
-            <div className="card">
-              <h3 className="font-bold text-vintage-900 mb-2">Spotting Reproductions</h3>
-              <p className="text-sm text-gray-600 mb-3">
-                Key differences between authentic antiques and modern reproductions
-              </p>
-              <span className="text-xs text-vintage-600">Coming Soon</span>
-            </div>
-          </div>
+          <p className="text-vintage-700 mb-6 max-w-2xl mx-auto">
+            Help our community by submitting photos and information about makers,
+            patterns, or hallmarks you've researched.
+          </p>
+          <Link href="/reference/contribute" className="btn-primary inline-block">
+            Contribute to the Library
+          </Link>
         </div>
       </div>
     </div>

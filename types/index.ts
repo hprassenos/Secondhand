@@ -113,3 +113,129 @@ export interface RouteData {
   optimized_order: string[] // event IDs in order
   warnings?: string[]
 }
+
+// Reference Library Types
+
+export type ReferenceSubmissionType = 'maker' | 'pattern' | 'hallmark' | 'correction'
+
+export type RarityLevel = 'common' | 'uncommon' | 'rare' | 'very_rare' | 'extremely_rare'
+
+export interface ReferenceCategory {
+  id: string
+  name: string
+  slug: string
+  description?: string
+  icon?: string
+  image_url?: string
+  sort_order: number
+  created_at: string
+  updated_at: string
+}
+
+export interface ReferenceMaker {
+  id: string
+  category_id: string
+  name: string
+  slug: string
+  description?: string
+  founding_year?: number
+  closing_year?: number
+  country?: string
+  logo_url?: string
+  website_url?: string
+  history?: string
+  meta_title?: string
+  meta_description?: string
+  view_count: number
+  search_count: number
+  created_at: string
+  updated_at: string
+  // Relations
+  category?: ReferenceCategory
+  patterns?: ReferencePattern[]
+  hallmarks?: ReferenceHallmark[]
+}
+
+export interface ReferencePattern {
+  id: string
+  maker_id: string
+  name: string
+  slug: string
+  description?: string
+  year_introduced?: number
+  year_discontinued?: number
+  materials?: string[]
+  colors?: string[]
+  style_period?: string
+  rarity?: RarityLevel
+  estimated_value_min?: number
+  estimated_value_max?: number
+  value_notes?: string
+  identification_tips?: string
+  meta_title?: string
+  meta_description?: string
+  view_count: number
+  search_count: number
+  created_at: string
+  updated_at: string
+  // Relations
+  maker?: ReferenceMaker
+  images?: ReferenceImage[]
+}
+
+export interface ReferenceImage {
+  id: string
+  pattern_id: string
+  image_url: string
+  thumbnail_url?: string
+  alt_text: string
+  caption?: string
+  item_type?: string // 'plate', 'cup', 'teapot', etc.
+  view_angle?: string // 'front', 'back', 'side', 'detail', 'hallmark'
+  is_primary: boolean
+  sort_order: number
+  uploaded_by?: string
+  source_attribution?: string
+  created_at: string
+}
+
+export interface ReferenceHallmark {
+  id: string
+  maker_id: string
+  image_url: string
+  description: string
+  date_range_start?: number
+  date_range_end?: number
+  country_code?: string
+  mark_type?: string
+  identification_notes?: string
+  view_count: number
+  created_at: string
+  // Relations
+  maker?: ReferenceMaker
+}
+
+export interface ReferenceSubmission {
+  id: string
+  submitted_by: string
+  submission_type: ReferenceSubmissionType
+  data: any // JSON payload
+  related_maker_id?: string
+  related_pattern_id?: string
+  status: ModerationStatus
+  reviewed_by?: string
+  reviewed_at?: string
+  reviewer_notes?: string
+  created_at: string
+}
+
+export interface ReferenceSearchResult {
+  type: 'maker' | 'pattern'
+  id: string
+  name: string
+  description?: string
+  image_url?: string
+  maker_name?: string
+  category_name?: string
+  rank: number
+}
