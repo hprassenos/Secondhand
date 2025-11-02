@@ -14,9 +14,12 @@ interface DashboardStats {
   pendingEvents: number
   pendingGuestbook: number
   pendingClaims: number
+  pendingReferenceSubmissions: number
   totalListings: number
   totalUsers: number
   totalEvents: number
+  totalReferenceMakers: number
+  totalReferencePatterns: number
 }
 
 interface AdminDashboardProps {
@@ -24,7 +27,7 @@ interface AdminDashboardProps {
 }
 
 export default function AdminDashboard({ stats }: AdminDashboardProps) {
-  const totalPending = stats.pendingEvents + stats.pendingGuestbook + stats.pendingClaims
+  const totalPending = stats.pendingEvents + stats.pendingGuestbook + stats.pendingClaims + stats.pendingReferenceSubmissions
 
   return (
     <div className="min-h-screen bg-vintage-50">
@@ -49,6 +52,7 @@ export default function AdminDashboard({ stats }: AdminDashboardProps) {
                     {stats.pendingEvents > 0 && <li>{stats.pendingEvents} sale listings</li>}
                     {stats.pendingGuestbook > 0 && <li>{stats.pendingGuestbook} guestbook entries</li>}
                     {stats.pendingClaims > 0 && <li>{stats.pendingClaims} listing claims</li>}
+                    {stats.pendingReferenceSubmissions > 0 && <li>{stats.pendingReferenceSubmissions} reference submissions</li>}
                   </ul>
                 </div>
               </div>
@@ -57,7 +61,7 @@ export default function AdminDashboard({ stats }: AdminDashboardProps) {
         )}
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
           <StatCard
             title="Total Listings"
             value={stats.totalListings}
@@ -76,12 +80,24 @@ export default function AdminDashboard({ stats }: AdminDashboardProps) {
             icon={<CalendarIcon className="h-8 w-8" />}
             color="purple"
           />
+          <StatCard
+            title="Reference Makers"
+            value={stats.totalReferenceMakers}
+            icon={<BuildingStorefrontIcon className="h-8 w-8" />}
+            color="blue"
+          />
+          <StatCard
+            title="Reference Patterns"
+            value={stats.totalReferencePatterns}
+            icon={<PhotoIcon className="h-8 w-8" />}
+            color="purple"
+          />
         </div>
 
         {/* Quick Actions */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-vintage-900 mb-4">Moderation Queue</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <ActionCard
               title="Moderate Sales"
               description="Review and approve yard & estate sale listings"
@@ -105,6 +121,14 @@ export default function AdminDashboard({ stats }: AdminDashboardProps) {
               badge={stats.pendingClaims}
               href="/admin/moderate/claims"
               color="green"
+            />
+            <ActionCard
+              title="Reference Library"
+              description="Review community contributions"
+              icon={<PhotoIcon className="h-6 w-6" />}
+              badge={stats.pendingReferenceSubmissions}
+              href="/admin/moderate/reference"
+              color="blue"
             />
           </div>
         </div>

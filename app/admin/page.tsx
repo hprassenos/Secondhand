@@ -29,7 +29,7 @@ async function checkAdminAccess() {
 
 async function getDashboardStats() {
   // Pending moderation counts
-  const [eventsResult, guestbookResult, claimsResult] = await Promise.all([
+  const [eventsResult, guestbookResult, claimsResult, referenceResult] = await Promise.all([
     supabase
       .from('events')
       .select('id', { count: 'exact', head: true })
@@ -43,10 +43,14 @@ async function getDashboardStats() {
       .select('id', { count: 'exact', head: true })
       .eq('claimed', true)
       .eq('verified', false),
+    supabase
+      .from('reference_submissions')
+      .select('id', { count: 'exact', head: true })
+      .eq('status', 'pending'),
   ])
 
   // Total counts
-  const [totalListings, totalUsers, totalEvents] = await Promise.all([
+  const [totalListings, totalUsers, totalEvents, totalMakers, totalPatterns] = await Promise.all([
     supabase
       .from('listings')
       .select('id', { count: 'exact', head: true }),
@@ -57,15 +61,24 @@ async function getDashboardStats() {
       .from('events')
       .select('id', { count: 'exact', head: true })
       .eq('moderation_status', 'approved'),
+    supabase
+      .from('reference_makers')
+      .select('id', { count: 'exact', head: true }),
+    supabase
+      .from('reference_patterns')
+      .select('id', { count: 'exact', head: true }),
   ])
 
   return {
     pendingEvents: eventsResult.count || 0,
     pendingGuestbook: guestbookResult.count || 0,
     pendingClaims: claimsResult.count || 0,
+    pendingReferenceSubmissions: referenceResult.count || 0,
     totalListings: totalListings.count || 0,
     totalUsers: totalUsers.count || 0,
     totalEvents: totalEvents.count || 0,
+    totalReferenceMakers: totalMakers.count || 0,
+    totalReferencePatterns: totalPatterns.count || 0,
   }
 }
 
