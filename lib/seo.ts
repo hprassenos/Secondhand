@@ -195,14 +195,15 @@ export function generateFAQStructuredData(faqs: { question: string; answer: stri
 /**
  * Helper to inject structured data into page
  * Use this in your page components
+ *
+ * Example usage in a page.tsx:
+ * <script
+ *   type="application/ld+json"
+ *   dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+ * />
  */
-export function StructuredData({ data }: { data: any }) {
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
-    />
-  )
+export function getStructuredDataScript(data: any) {
+  return JSON.stringify(data)
 }
 
 /**
