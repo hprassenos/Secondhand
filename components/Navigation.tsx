@@ -20,8 +20,8 @@ export default function Navigation() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-vintage-700">Secondhand</span>
-              <span className="text-2xl font-light text-vintage-500 ml-1">Finds</span>
+              <span className="text-2xl font-bold text-empire-green">Secondhand</span>
+              <span className="text-2xl font-light text-empire-gold ml-1">Empire</span>
             </Link>
           </div>
 
