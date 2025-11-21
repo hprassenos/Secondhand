@@ -227,7 +227,7 @@ export function generateOpenGraphTags({
     description,
     type,
     url,
-    siteName: 'Secondhand Finds',
+    siteName: 'Secondhand Empire',
     ...(image && { images: [{ url: image }] }),
   }
 }
@@ -256,7 +256,7 @@ export function generateTwitterTags({
  * Default SEO config
  */
 export const DEFAULT_SEO = {
-  title: 'Secondhand Finds | Vintage & Antique Shop Directory',
+  title: 'Secondhand Empire | Vintage & Antique Shop Directory',
   description:
     'Discover vintage shops, antique stores, estate sales, and flea markets. Browse our reference library to identify china, glass, silver, and collectibles.',
   keywords: [

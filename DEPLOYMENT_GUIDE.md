@@ -1,4 +1,4 @@
-# Deployment Guide - Secondhand Finds
+# Deployment Guide - Secondhand Empire
 
 Complete step-by-step guide for deploying your vintage marketplace to production.
 
@@ -17,7 +17,7 @@ Complete step-by-step guide for deploying your vintage marketplace to production
 1. Go to [supabase.com](https://supabase.com) and sign in
 2. Click "New Project"
 3. Fill in:
-   - **Name:** secondhand-finds
+   - **Name:** secondhand-empire
    - **Database Password:** (generate strong password - save this!)
    - **Region:** Choose closest to your target audience
 4. Click "Create new project" (takes ~2 minutes)
@@ -141,7 +141,7 @@ NEXT_PUBLIC_GA_TRACKING_ID=G-XXXXXXXXXX
 ### 3.1 Google Places API
 
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project: "Secondhand Finds"
+2. Create a new project: "Secondhand Empire"
 3. Enable these APIs:
    - **Places API**
    - **Geocoding API**
@@ -246,7 +246,7 @@ Buy from:
 - GoDaddy
 - Cloudflare
 
-Suggested: `secondhandfinds.com` or `vintagefinds.co`
+Suggested: `secondhandempire.com` or `vintageempire.co`
 
 ### 6.2 Connect to Vercel
 

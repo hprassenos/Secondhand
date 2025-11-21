@@ -1,10 +1,10 @@
-# Secondhand Finds - Vintage Marketplace Platform
+# Secondhand Empire - Vintage Marketplace Platform
 
 A comprehensive vintage and antique marketplace website built with Next.js 14, TypeScript, Tailwind CSS, and Supabase.
 
 ## 🎯 Overview
 
-Secondhand Finds is a platform connecting vintage enthusiasts with:
+Secondhand Empire is a platform connecting vintage enthusiasts with:
 - Antique shops, thrift stores, and consignment shops
 - Yard sales and garage sales
 - Estate sales

@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: PageProps) {
   const city = params.city.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
 
   return {
-    title: `Antique Shops in ${city}, ${state} - Vintage Stores & Collectibles | Secondhand Finds`,
+    title: `Antique Shops in ${city}, ${state} - Vintage Stores & Collectibles | Secondhand Empire`,
     description: `Find the best antique shops, vintage stores, and collectibles in ${city}, ${state}. Browse our curated directory of local vintage treasures.`,
   }
 }

@@ -39,12 +39,12 @@ export async function generateMetadata({ params }: PageProps) {
 
   if (!sale) {
     return {
-      title: 'Estate Sale Not Found - Secondhand Finds',
+      title: 'Estate Sale Not Found - Secondhand Empire',
     }
   }
 
   return {
-    title: `${sale.title} - ${sale.city}, ${sale.state} | Secondhand Finds`,
+    title: `${sale.title} - ${sale.city}, ${sale.state} | Secondhand Empire`,
     description: sale.description || `Estate sale in ${sale.city}, ${sale.state}`,
   }
 }

@@ -9,17 +9,38 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Primary Brand Colors
+        empire: {
+          green: '#496D4B',      // Dark Green - Main accent
+          gold: '#A39871',       // Gold - Secondary accent
+          black: '#2A2A2A',      // Text/Strong contrast
+        },
+        // Neutral & Background Colors
+        cream: {
+          50: '#F8F8F4',         // Primary background
+          100: '#F5F5EC',        // Alternate background
+          200: '#E0E0DB',        // Light grey - cards/dividers
+          300: '#D4D4CE',        // Subtle dividers
+          400: '#8C8C85',        // Medium grey - secondary text
+          500: '#7A7A72',        // Borders
+        },
+        // Complementary Accents
+        accent: {
+          teal: '#3B7A77',       // Deep teal - hover states
+          rust: '#B86F5D',       // Earthy rust - alerts/highlights
+        },
+        // Keep vintage as alias for backwards compatibility
         vintage: {
-          50: '#faf8f3',
-          100: '#f5f0e6',
-          200: '#e8ddc7',
-          300: '#d9c6a3',
-          400: '#c9ad7f',
-          500: '#b8935b',
-          600: '#a47b47',
-          700: '#86643a',
-          800: '#6d5232',
-          900: '#5a442b',
+          50: '#F8F8F4',
+          100: '#F5F5EC',
+          200: '#E0E0DB',
+          300: '#D4D4CE',
+          400: '#8C8C85',
+          500: '#7A7A72',
+          600: '#496D4B',        // Primary green
+          700: '#3d5b3f',        // Darker green
+          800: '#2A2A2A',        // Near black
+          900: '#1a1a1a',        // Black
         },
       },
     },

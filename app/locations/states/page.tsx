@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { MapPinIcon } from '@heroicons/react/24/outline'
 
 export const metadata = {
-  title: 'Browse by State - Antique Shops & Vintage Stores | Secondhand Finds',
+  title: 'Browse by State - Antique Shops & Vintage Stores | Secondhand Empire',
   description: 'Find antique shops, thrift stores, and vintage treasures in your state. Browse our directory of vintage stores across the United States.',
 }
 

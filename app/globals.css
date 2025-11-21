@@ -3,8 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 250, 248, 243;
+  /* Secondhand Empire Color Palette */
+  --empire-green: #496D4B;
+  --empire-gold: #A39871;
+  --empire-black: #2A2A2A;
+  --cream-bg: #F8F8F4;
+  --cream-alt: #F5F5EC;
+  --grey-light: #E0E0DB;
+  --grey-medium: #8C8C85;
+  --accent-teal: #3B7A77;
+  --accent-rust: #B86F5D;
+
+  --foreground-rgb: 42, 42, 42;
+  --background-start-rgb: 248, 248, 244;
   --background-end-rgb: 255, 255, 255;
 }
 
@@ -20,18 +31,31 @@ body {
 
 @layer components {
   .btn-primary {
-    @apply bg-vintage-600 hover:bg-vintage-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors;
+    @apply bg-empire-green hover:bg-accent-teal text-white font-semibold py-2 px-4 rounded-lg transition-colors;
   }
 
   .btn-secondary {
-    @apply bg-vintage-100 hover:bg-vintage-200 text-vintage-800 font-semibold py-2 px-4 rounded-lg transition-colors;
+    @apply bg-cream-100 hover:bg-cream-200 text-empire-black font-semibold py-2 px-4 rounded-lg transition-colors border border-cream-300;
+  }
+
+  .btn-gold {
+    @apply bg-empire-gold hover:bg-opacity-90 text-white font-semibold py-2 px-4 rounded-lg transition-colors;
   }
 
   .card {
-    @apply bg-white rounded-lg shadow-md p-6 border border-vintage-200;
+    @apply bg-white rounded-lg shadow-md p-6 border border-cream-200;
   }
 
   .input-field {
-    @apply w-full px-4 py-2 border border-vintage-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-vintage-500;
+    @apply w-full px-4 py-2 border border-cream-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-empire-green;
+  }
+
+  /* Text utilities */
+  .text-brand {
+    @apply text-empire-green;
+  }
+
+  .text-gold {
+    @apply text-empire-gold;
   }
 }

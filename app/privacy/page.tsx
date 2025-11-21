@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Privacy Policy - Secondhand Finds',
-  description: 'Privacy Policy for Secondhand Finds - How we collect, use, and protect your information',
+  title: 'Privacy Policy - Secondhand Empire',
+  description: 'Privacy Policy for Secondhand Empire - How we collect, use, and protect your information',
 }
 
 export default function PrivacyPage() {
@@ -16,7 +16,7 @@ export default function PrivacyPage() {
 
         <div className="card prose prose-vintage max-w-none">
           <p className="text-gray-700 mb-6">
-            At Secondhand Finds, we take your privacy seriously. This Privacy Policy explains how we
+            At Secondhand Empire, we take your privacy seriously. This Privacy Policy explains how we
             collect, use, disclose, and safeguard your information when you visit our website.
           </p>
 
@@ -90,7 +90,7 @@ export default function PrivacyPage() {
 
           <h3 className="text-xl font-semibold text-vintage-900 mt-6 mb-3">3.4 Business Transfers</h3>
           <p className="text-gray-700">
-            If Secondhand Finds is involved in a merger, acquisition, or sale of assets, your information
+            If Secondhand Empire is involved in a merger, acquisition, or sale of assets, your information
             may be transferred as part of that transaction.
           </p>
 
@@ -200,15 +200,15 @@ export default function PrivacyPage() {
             If you have questions about this Privacy Policy or our data practices, please contact us:
           </p>
           <div className="text-gray-700">
-            <p>Email: <a href="mailto:privacy@secondhandfinds.com" className="text-vintage-600 hover:text-vintage-700">privacy@secondhandfinds.com</a></p>
-            <p className="mt-2">Mail: Secondhand Finds Privacy Team<br/>
+            <p>Email: <a href="mailto:privacy@secondhandempire.com" className="text-vintage-600 hover:text-vintage-700">privacy@secondhandempire.com</a></p>
+            <p className="mt-2">Mail: Secondhand Empire Privacy Team<br/>
             [Your Address]<br/>
             [City, State ZIP]</p>
           </div>
 
           <div className="mt-12 pt-8 border-t border-vintage-200">
             <p className="text-sm text-gray-600">
-              By using Secondhand Finds, you acknowledge that you have read and understood this Privacy Policy.
+              By using Secondhand Empire, you acknowledge that you have read and understood this Privacy Policy.
             </p>
             <div className="mt-4 space-x-4">
               <Link href="/terms" className="text-vintage-600 hover:text-vintage-700 text-sm font-medium">

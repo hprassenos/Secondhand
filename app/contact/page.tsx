@@ -73,10 +73,10 @@ export default function ContactPage() {
                 Prefer email? Reach us at:
               </p>
               <a
-                href="mailto:hello@secondhandfinds.com"
+                href="mailto:hello@secondhandempire.com"
                 className="text-vintage-700 hover:text-vintage-800 text-sm font-medium break-all"
               >
-                hello@secondhandfinds.com
+                hello@secondhandempire.com
               </a>
             </div>
           </div>

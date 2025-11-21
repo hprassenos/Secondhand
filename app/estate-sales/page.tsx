@@ -4,7 +4,7 @@ import type { Event } from '@/types'
 import { addWeeks, startOfDay } from 'date-fns'
 
 export const metadata = {
-  title: 'Estate Sales - Secondhand Finds',
+  title: 'Estate Sales - Secondhand Empire',
   description: 'Browse upcoming estate sales with detailed photos and descriptions',
 }
 

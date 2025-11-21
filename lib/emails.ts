@@ -13,8 +13,8 @@
 import { supabase } from '@/lib/supabase'
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY
-const FROM_EMAIL = process.env.FROM_EMAIL || 'hello@secondhandfinds.com'
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://secondhandfinds.com'
+const FROM_EMAIL = process.env.FROM_EMAIL || 'hello@secondhandempire.com'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://secondhandempire.com'
 
 interface EmailData {
   [key: string]: any
@@ -23,9 +23,9 @@ interface EmailData {
 // Email Templates
 const templates = {
   welcome: {
-    subject: 'Welcome to Secondhand Finds!',
+    subject: 'Welcome to Secondhand Empire!',
     html: (data: EmailData) => `
-      <h1>Welcome to Secondhand Finds!</h1>
+      <h1>Welcome to Secondhand Empire!</h1>
       <p>Hi${data.name ? ` ${data.name}` : ''},</p>
       <p>Thanks for joining our community of vintage enthusiasts! We're excited to help you discover amazing treasures.</p>
 
@@ -37,15 +37,15 @@ const templates = {
       </ul>
 
       <p>Happy treasure hunting!</p>
-      <p>The Secondhand Finds Team</p>
+      <p>The Secondhand Empire Team</p>
     `
   },
 
   shop_welcome: {
-    subject: 'Welcome! Your Shop is Now on Secondhand Finds',
+    subject: 'Welcome! Your Shop is Now on Secondhand Empire',
     html: (data: EmailData) => `
       <h1>Welcome, ${data.shopName}!</h1>
-      <p>Your shop is now listed on Secondhand Finds and is visible to thousands of vintage enthusiasts.</p>
+      <p>Your shop is now listed on Secondhand Empire and is visible to thousands of vintage enthusiasts.</p>
 
       <h2>Your Listing Stats:</h2>
       <p><a href="${SITE_URL}/directory/${data.listingId}">View Your Listing</a></p>

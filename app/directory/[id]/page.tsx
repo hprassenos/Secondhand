@@ -54,12 +54,12 @@ export async function generateMetadata({ params }: PageProps) {
 
   if (!listing) {
     return {
-      title: 'Shop Not Found - Secondhand Finds',
+      title: 'Shop Not Found - Secondhand Empire',
     }
   }
 
   return {
-    title: `${listing.name} - ${listing.city}, ${listing.state} | Secondhand Finds`,
+    title: `${listing.name} - ${listing.city}, ${listing.state} | Secondhand Empire`,
     description: listing.description || `Visit ${listing.name}, a vintage and antique shop in ${listing.city}, ${listing.state}`,
   }
 }

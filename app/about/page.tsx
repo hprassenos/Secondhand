@@ -2,8 +2,8 @@ import Link from 'next/link'
 import { HeartIcon, UsersIcon, MapIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
 
 export const metadata = {
-  title: 'About Us - Secondhand Finds',
-  description: 'Learn about Secondhand Finds and our mission to connect vintage enthusiasts with local treasures',
+  title: 'About Us - Secondhand Empire',
+  description: 'Learn about Secondhand Empire and our mission to connect vintage enthusiasts with local treasures',
 }
 
 export default function AboutPage() {
@@ -13,7 +13,7 @@ export default function AboutPage() {
         {/* Hero */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-vintage-900 mb-4">
-            About Secondhand Finds
+            About Secondhand Empire
           </h1>
           <p className="text-xl text-gray-600">
             Connecting treasure hunters with vintage gems since 2025
@@ -25,7 +25,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-vintage-900 mb-4">Our Mission</h2>
           <p className="text-lg text-gray-700 mb-4">
             We believe that every vintage item has a story to tell, and every treasure hunt should be
-            an adventure. Secondhand Finds exists to connect passionate collectors, casual browsers,
+            an adventure. Secondhand Empire exists to connect passionate collectors, casual browsers,
             and curious explorers with the antique shops, yard sales, and hidden gems in their communities.
           </p>
           <p className="text-lg text-gray-700">
@@ -106,7 +106,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-vintage-900 mb-4">Our Story</h2>
           <div className="prose prose-vintage max-w-none text-gray-700">
             <p className="mb-4">
-              Secondhand Finds was born from a simple frustration: weekend treasure hunting meant
+              Secondhand Empire was born from a simple frustration: weekend treasure hunting meant
               juggling multiple websites, scribbled addresses, and hoping you didn't miss that one
               estate sale with the perfect mid-century dresser.
             </p>
@@ -128,7 +128,7 @@ export default function AboutPage() {
         <div className="bg-vintage-600 text-white rounded-xl p-8 mb-12">
           <h2 className="text-3xl font-bold mb-4">For Shop Owners</h2>
           <p className="text-vintage-100 mb-6">
-            Are you an antique dealer, estate sale company, or shop owner? Secondhand Finds helps you
+            Are you an antique dealer, estate sale company, or shop owner? Secondhand Empire helps you
             reach passionate collectors actively searching for treasures. Claim your free listing today
             and connect with your ideal customers.
           </p>
