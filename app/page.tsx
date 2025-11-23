@@ -10,14 +10,16 @@ export default function Home() {
         <div className="text-center">
           {/* Logo */}
           <div className="flex justify-center mb-8">
-            <Image
-              src="/images/logo-full.png"
-              alt="Secondhand Empire"
-              width={400}
-              height={300}
-              className="w-auto h-auto max-w-[300px]"
-              priority
-            />
+            <div className="bg-white rounded-lg p-4">
+              <Image
+                src="/images/logo-full.png"
+                alt="Secondhand Empire"
+                width={400}
+                height={300}
+                className="w-auto h-auto max-w-[300px]"
+                priority
+              />
+            </div>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-empire-black mb-6">
             Discover Vintage Treasures
