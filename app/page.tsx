@@ -1,15 +1,27 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { MapPinIcon, CalendarIcon, BuildingStorefrontIcon, BookOpenIcon } from '@heroicons/react/24/outline'
 
 export default function Home() {
   return (
-    <div className="bg-gradient-to-b from-vintage-50 to-white">
+    <div className="bg-gradient-to-b from-cream-50 to-white">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-vintage-900 mb-6">
+          {/* Logo */}
+          <div className="flex justify-center mb-8">
+            <Image
+              src="/images/logo-full.png"
+              alt="Secondhand Empire"
+              width={400}
+              height={300}
+              className="w-auto h-auto max-w-[300px]"
+              priority
+            />
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold text-empire-black mb-6">
             Discover Vintage Treasures
-            <span className="block text-vintage-600">Near You</span>
+            <span className="block text-empire-green">Near You</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
             Find antique shops, yard sales, estate sales, and hidden gems in your area.

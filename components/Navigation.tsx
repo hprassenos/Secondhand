@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
@@ -17,11 +18,17 @@ export default function Navigation() {
   return (
     <nav className="bg-white shadow-sm border-b border-vintage-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-20 md:h-28">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-empire-green">Secondhand</span>
-              <span className="text-2xl font-light text-empire-gold ml-1">Empire</span>
+              <Image
+                src="/images/logo-simplified.png"
+                alt="Secondhand Empire"
+                width={180}
+                height={90}
+                className="h-[50px] w-auto md:h-[90px]"
+                priority
+              />
             </Link>
           </div>
 
