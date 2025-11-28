@@ -22,7 +22,7 @@ export default function Navigation() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <Image
-                src="/images/logo-simplified.png"
+                src="/images/logo-simplified-transparent.png"
                 alt="Secondhand Empire"
                 width={180}
                 height={90}
