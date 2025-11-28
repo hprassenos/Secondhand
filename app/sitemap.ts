@@ -4,6 +4,18 @@ import { supabase } from '@/lib/supabase'
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://secondhandfinds.com'
 
+  // Return minimal sitemap if Supabase credentials are not available (e.g., during local builds)
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {
+    return [
+      {
+        url: baseUrl,
+        lastModified: new Date(),
+        changeFrequency: 'daily',
+        priority: 1,
+      },
+    ]
+  }
+
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
     {
@@ -63,13 +75,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]
 
   // Location pages - States
-  const { data: stateData } = await supabase
-    .from('listings')
+  const { data: stateData } = await (supabase
+    .from('listings') as any)
     .select('state')
     .order('state')
 
-  const states = [...new Set(stateData?.map(l => l.state) || [])]
-  const statePages: MetadataRoute.Sitemap = states.map(state => ({
+  const states = [...new Set(stateData?.map((l: any) => l.state) || [])]
+  const statePages: MetadataRoute.Sitemap = states.map((state: any) => ({
     url: `${baseUrl}/locations/${state.toLowerCase()}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
@@ -77,13 +89,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }))
 
   // Location pages - Cities
-  const { data: cityData } = await supabase
-    .from('listings')
+  const { data: cityData } = await (supabase
+    .from('listings') as any)
     .select('state, city')
     .order('state, city')
 
   const cities = cityData || []
-  const cityPages: MetadataRoute.Sitemap = cities.map(({ state, city }) => ({
+  const cityPages: MetadataRoute.Sitemap = cities.map(({ state, city }: any) => ({
     url: `${baseUrl}/locations/${state.toLowerCase()}/${city.toLowerCase().replace(/\s+/g, '-')}`,
     lastModified: new Date(),
     changeFrequency: 'weekly',
@@ -91,13 +103,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }))
 
   // Individual listings
-  const { data: listings } = await supabase
-    .from('listings')
+  const { data: listings } = await (supabase
+    .from('listings') as any)
     .select('id, updated_at')
     .limit(5000) // Limit to avoid huge sitemaps
 
   const listingPages: MetadataRoute.Sitemap =
-    listings?.map(listing => ({
+    listings?.map((listing: any) => ({
       url: `${baseUrl}/directory/${listing.id}`,
       lastModified: new Date(listing.updated_at || Date.now()),
       changeFrequency: 'monthly',
@@ -105,12 +117,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })) || []
 
   // Reference library categories
-  const { data: categories } = await supabase
-    .from('reference_categories')
+  const { data: categories } = await (supabase
+    .from('reference_categories') as any)
     .select('slug, updated_at')
 
   const categoryPages: MetadataRoute.Sitemap =
-    categories?.map(cat => ({
+    categories?.map((cat: any) => ({
       url: `${baseUrl}/reference/category/${cat.slug}`,
       lastModified: new Date(cat.updated_at),
       changeFrequency: 'weekly',
@@ -118,13 +130,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })) || []
 
   // Reference library makers
-  const { data: makers } = await supabase
-    .from('reference_makers')
+  const { data: makers } = await (supabase
+    .from('reference_makers') as any)
     .select('slug, updated_at')
     .limit(1000)
 
   const makerPages: MetadataRoute.Sitemap =
-    makers?.map(maker => ({
+    makers?.map((maker: any) => ({
       url: `${baseUrl}/reference/maker/${maker.slug}`,
       lastModified: new Date(maker.updated_at),
       changeFrequency: 'monthly',
@@ -132,15 +144,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })) || []
 
   // Reference library patterns
-  const { data: patterns } = await supabase
-    .from('reference_patterns')
+  const { data: patterns } = await (supabase
+    .from('reference_patterns') as any)
     .select('slug, maker:reference_makers(slug), updated_at')
     .limit(2000)
 
   const patternPages: MetadataRoute.Sitemap =
     patterns
-      ?.filter(p => p.maker && p.maker.slug)
-      .map(pattern => ({
+      ?.filter((p: any) => p.maker && p.maker.slug)
+      .map((pattern: any) => ({
         url: `${baseUrl}/reference/pattern/${pattern.maker.slug}--${pattern.slug}`,
         lastModified: new Date(pattern.updated_at),
         changeFrequency: 'monthly',

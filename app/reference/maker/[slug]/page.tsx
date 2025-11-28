@@ -14,8 +14,8 @@ interface MakerPageProps {
 export async function generateMetadata({
   params,
 }: MakerPageProps): Promise<Metadata> {
-  const { data: maker } = await supabase
-    .from('reference_makers')
+  const { data: maker } = await (supabase
+    .from('reference_makers') as any)
     .select('*')
     .eq('slug', params.slug)
     .single()

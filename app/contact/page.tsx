@@ -37,7 +37,7 @@ export default function ContactPage() {
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-vintage-900 mb-4">Contact Us</h1>
           <p className="text-xl text-gray-600">
-            We'd love to hear from you! Get in touch with questions, suggestions, or feedback.
+            We&apos;d love to hear from you! Get in touch with questions, suggestions, or feedback.
           </p>
         </div>
 
@@ -89,7 +89,7 @@ export default function ContactPage() {
               {status === 'success' && (
                 <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-lg mb-6">
                   <p className="font-medium">Message sent successfully!</p>
-                  <p className="text-sm mt-1">We'll get back to you within 1-2 business days.</p>
+                  <p className="text-sm mt-1">We&apos;ll get back to you within 1-2 business days.</p>
                 </div>
               )}
 
@@ -149,7 +149,7 @@ export default function ContactPage() {
                     className="input-field"
                   >
                     <option value="general">General Inquiry</option>
-                    <option value="shop_owner">I'm a Shop Owner</option>
+                    <option value="shop_owner">I&apos;m a Shop Owner</option>
                     <option value="technical">Technical Issue</option>
                     <option value="listing">Report a Listing Issue</option>
                     <option value="partnership">Partnership Opportunity</option>

@@ -14,8 +14,8 @@ async function checkAdminAccess() {
   }
 
   // Check if user is admin
-  const { data: userData } = await supabase
-    .from('users')
+  const { data: userData } = await (supabase
+    .from('users') as any)
     .select('account_type')
     .eq('id', user.id)
     .single()

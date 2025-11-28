@@ -51,8 +51,8 @@ export default function PostSalePage() {
       }
 
       // Create event
-      const { data: event, error: eventError } = await supabase
-        .from('events')
+      const { data: event, error: eventError } = await (supabase
+        .from('events') as any)
         .insert({
           type: saleType,
           title,
@@ -78,8 +78,8 @@ export default function PostSalePage() {
           tag_id: tag.id,
         }))
 
-        const { error: tagsError } = await supabase
-          .from('event_tags')
+        const { error: tagsError } = await (supabase
+          .from('event_tags') as any)
           .insert(tagRelations)
 
         if (tagsError) throw tagsError

@@ -8,8 +8,8 @@ export const metadata = {
 }
 
 async function getStatesWithCounts() {
-  const { data, error } = await supabase
-    .from('listings')
+  const { data, error } = await (supabase
+    .from('listings') as any)
     .select('state, city')
 
   if (error || !data) {
@@ -17,7 +17,7 @@ async function getStatesWithCounts() {
   }
 
   // Count listings and cities per state
-  const stateCounts = data.reduce((acc: any, listing) => {
+  const stateCounts = data.reduce((acc: any, listing: any) => {
     if (!acc[listing.state]) {
       acc[listing.state] = { cities: new Set(), count: 0 }
     }
@@ -91,7 +91,7 @@ export default async function StatesPage() {
               Find Antique Shops & Vintage Stores in Your State
             </h2>
             <p className="text-gray-700 mb-4">
-              Whether you're a seasoned collector or just starting your vintage treasure hunt, our state-by-state
+              Whether you&apos;re a seasoned collector or just starting your vintage treasure hunt, our state-by-state
               directory makes it easy to find antique shops, thrift stores, consignment shops, and flea markets
               near you.
             </p>

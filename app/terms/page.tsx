@@ -38,7 +38,7 @@ export default function TermsPage() {
             <li>Use the materials for any commercial purpose or public display</li>
             <li>Attempt to decompile or reverse engineer any software on the site</li>
             <li>Remove any copyright or proprietary notations</li>
-            <li>Transfer the materials to another person or "mirror" the materials on any other server</li>
+            <li>Transfer the materials to another person or &quot;mirror&quot; the materials on any other server</li>
           </ul>
 
           <h2 className="text-2xl font-bold text-vintage-900 mt-8 mb-4">3. User Accounts</h2>
@@ -65,7 +65,7 @@ export default function TermsPage() {
           <p className="text-gray-700 mb-2">You agree that your content will not:</p>
           <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
             <li>Be false, misleading, or fraudulent</li>
-            <li>Infringe on any third party's intellectual property or privacy rights</li>
+            <li>Infringe on any third party&apos;s intellectual property or privacy rights</li>
             <li>Contain spam, advertising, or solicitations</li>
             <li>Include offensive, discriminatory, or illegal material</li>
             <li>Contain malware or malicious code</li>
@@ -104,7 +104,7 @@ export default function TermsPage() {
             <li>Use the site for any illegal purpose</li>
             <li>Scrape, harvest, or collect user data without permission</li>
             <li>Impersonate another person or entity</li>
-            <li>Interfere with or disrupt the site's operation</li>
+            <li>Interfere with or disrupt the site&apos;s operation</li>
             <li>Attempt to gain unauthorized access to any portion of the site</li>
             <li>Post false or misleading listings</li>
             <li>Harass, abuse, or harm other users</li>
@@ -125,7 +125,7 @@ export default function TermsPage() {
 
           <h2 className="text-2xl font-bold text-vintage-900 mt-8 mb-4">10. Disclaimer of Warranties</h2>
           <p className="text-gray-700">
-            The service is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, either
+            The service is provided &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; without warranties of any kind, either
             express or implied. We do not warrant that the service will be uninterrupted, secure, or
             error-free.
           </p>
@@ -152,7 +152,7 @@ export default function TermsPage() {
           <h2 className="text-2xl font-bold text-vintage-900 mt-8 mb-4">14. Changes to Terms</h2>
           <p className="text-gray-700">
             We reserve the right to modify these terms at any time. We will notify users of material
-            changes by posting the new terms on this page with an updated "Last Updated" date. Your
+            changes by posting the new terms on this page with an updated &quot;Last Updated&quot; date. Your
             continued use of the service after changes constitutes acceptance of the new terms.
           </p>
 

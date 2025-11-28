@@ -29,8 +29,7 @@ export default function ModerateEventsClient({ events: initialEvents }: Moderate
   const handleApprove = async (eventId: string) => {
     setProcessing(eventId)
 
-    const { error } = await supabase
-      .from('events')
+    const { error } = await (supabase.from('events') as any)
       .update({ moderation_status: 'approved' })
       .eq('id', eventId)
 
@@ -54,8 +53,7 @@ export default function ModerateEventsClient({ events: initialEvents }: Moderate
 
     setProcessing(eventId)
 
-    const { error } = await supabase
-      .from('events')
+    const { error } = await (supabase.from('events') as any)
       .update({
         moderation_status: 'rejected',
         // Could add rejection_reason field to track this
@@ -132,7 +130,7 @@ export default function ModerateEventsClient({ events: initialEvents }: Moderate
                       </span>
                     </div>
                     <div className="text-xs text-gray-500">
-                      {format(new Date(event.created_at || Date.now()), 'MMM d, h:mm a')}
+                      {format(new Date(event.start_time), 'MMM d, h:mm a')}
                     </div>
                   </div>
 

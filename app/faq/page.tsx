@@ -49,7 +49,7 @@ const faqs: FAQItem[] = [
     question: 'How do I share my finds?',
     answer: (
       <>
-        Visit any shop page and click "Share Your Find" to add photos and descriptions to the guestbook.
+        Visit any shop page and click &quot;Share Your Find&quot; to add photos and descriptions to the guestbook.
         Your finds will be reviewed and published within 24 hours.
       </>
     ),
@@ -57,7 +57,7 @@ const faqs: FAQItem[] = [
   {
     category: 'For Shoppers',
     question: 'How accurate are shop hours and information?',
-    answer: 'We do our best to maintain accurate information, but we recommend calling ahead or checking the shop\'s website before visiting. Verified and claimed listings are typically more accurate as they\'re managed by the shop owners.',
+    answer: 'We do our best to maintain accurate information, but we recommend calling ahead or checking the shop&apos;s website before visiting. Verified and claimed listings are typically more accurate as they&apos;re managed by the shop owners.',
   },
 
   // Yard & Estate Sales
@@ -67,13 +67,13 @@ const faqs: FAQItem[] = [
     answer: (
       <>
         Click <Link href="/post-sale" className="text-vintage-600 hover:text-vintage-700">Post a Sale</Link> in the navigation,
-        fill out the form with your sale details, and we\'ll review and publish it within 24 hours. It\'s completely free!
+        fill out the form with your sale details, and we&apos;ll review and publish it within 24 hours. It&apos;s completely free!
       </>
     ),
   },
   {
     category: 'Yard & Estate Sales',
-    question: 'What\'s the difference between yard sales and estate sales?',
+    question: 'What&apos;s the difference between yard sales and estate sales?',
     answer: 'Yard sales are typically one-day or weekend sales by individuals. Estate sales are usually multi-day professional sales with extensive inventory, posted weeks in advance with detailed photo galleries.',
   },
   {
@@ -94,14 +94,14 @@ const faqs: FAQItem[] = [
     answer: (
       <>
         Find your shop in our <Link href="/directory" className="text-vintage-600 hover:text-vintage-700">directory</Link>,
-        click "Claim This Listing," and follow the verification process. We\'ll review your claim within 1-2 business days.
+        click &quot;Claim This Listing,&quot; and follow the verification process. We&apos;ll review your claim within 1-2 business days.
       </>
     ),
   },
   {
     category: 'For Shop Owners',
-    question: 'What if my shop isn\'t listed yet?',
-    answer: 'Contact us to add your shop! We\'re constantly expanding our directory and are happy to add new businesses.',
+    question: 'What if my shop isn&apos;t listed yet?',
+    answer: 'Contact us to add your shop! We&apos;re constantly expanding our directory and are happy to add new businesses.',
   },
   {
     category: 'For Shop Owners',
@@ -116,14 +116,14 @@ const faqs: FAQItem[] = [
   {
     category: 'For Shop Owners',
     question: 'Can I remove or hide my listing?',
-    answer: 'Yes. Once you\'ve claimed your listing, you can request to have it unpublished at any time through your account settings or by contacting us.',
+    answer: 'Yes. Once you&apos;ve claimed your listing, you can request to have it unpublished at any time through your account settings or by contacting us.',
   },
 
   // Technical
   {
     category: 'Technical',
     question: 'Do I need an account?',
-    answer: 'No account is needed to browse shops and sales. You\'ll need to create a free account to post sales, share finds in guestbooks, save searches, or claim a shop listing.',
+    answer: 'No account is needed to browse shops and sales. You&apos;ll need to create a free account to post sales, share finds in guestbooks, save searches, or claim a shop listing.',
   },
   {
     category: 'Technical',
@@ -145,14 +145,14 @@ const faqs: FAQItem[] = [
   {
     category: 'Reference Library',
     question: 'What is the Reference Library?',
-    answer: 'Our Reference Library will be a comprehensive resource for identifying hallmarks, makers marks, patterns, and learning about vintage items. We\'re currently building this section.',
+    answer: 'Our Reference Library will be a comprehensive resource for identifying hallmarks, makers marks, patterns, and learning about vintage items. We&apos;re currently building this section.',
   },
   {
     category: 'Reference Library',
     question: 'Can I contribute to the Reference Library?',
     answer: (
       <>
-        Yes! If you have expertise in antiques or vintage items, we\'d love your help.{' '}
+        Yes! If you have expertise in antiques or vintage items, we&apos;d love your help.{' '}
         <Link href="/contact" className="text-vintage-600 hover:text-vintage-700">Contact us</Link> to learn about contributing.
       </>
     ),
@@ -245,7 +245,7 @@ export default function FAQPage() {
             Still Have Questions?
           </h2>
           <p className="text-gray-700 mb-6">
-            Can't find what you're looking for? We're here to help!
+            Can&apos;t find what you&apos;re looking for? We&apos;re here to help!
           </p>
           <Link href="/contact" className="btn-primary">
             Contact Us

@@ -11,8 +11,8 @@ export default function SuccessPage() {
             Sale Posted Successfully!
           </h1>
           <p className="text-gray-600 mb-6">
-            Your sale has been submitted and is pending review. We'll review it within 24 hours and
-            notify you once it's live.
+            Your sale has been submitted and is pending review. We&apos;ll review it within 24 hours and
+            notify you once it&apos;s live.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link href="/yard-sales" className="btn-primary">

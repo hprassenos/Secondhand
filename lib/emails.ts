@@ -158,8 +158,8 @@ export async function sendEmail(
     const html = emailTemplate.html(data)
 
     // Queue email in database
-    await supabase
-      .from('email_queue')
+    await (supabase
+      .from('email_queue') as any)
       .insert({
         recipient_email: recipientEmail,
         recipient_id: recipientId,
@@ -208,8 +208,8 @@ async function sendViaResend(to: string, subject: string, html: string) {
 
 export async function sendMonthlyStatsEmails() {
   // Get all claimed listings
-  const { data: listings } = await supabase
-    .from('listings')
+  const { data: listings } = await (supabase
+    .from('listings') as any)
     .select(`
       id,
       name,
@@ -222,13 +222,13 @@ export async function sendMonthlyStatsEmails() {
 
   if (!listings) return
 
-  for (const listing of listings) {
+  for (const listing of (listings as any)) {
     // Check if user wants monthly stats
     const prefs = listing.users?.email_preferences
     if (prefs && !prefs.monthly_stats) continue
 
     // Get stats
-    const { data: stats } = await supabase
+    const { data: stats } = await (supabase as any)
       .rpc('get_listing_monthly_stats', {
         p_listing_id: listing.id
       })
@@ -244,7 +244,7 @@ export async function sendMonthlyStatsEmails() {
       {
         shopName: listing.name,
         listingId: listing.id,
-        month: format(new Date(), 'MMMM yyyy'),
+        month: new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' }),
         totalViews: monthlyStats.total_views,
         uniqueVisitors: monthlyStats.total_unique_visitors,
         clickThroughs: 0, // TODO: Add to query
@@ -262,22 +262,22 @@ export async function sendMonthlyStatsEmails() {
 
 export async function sendWeeklyDigests() {
   // Get users who want weekly digest
-  const { data: users } = await supabase
-    .from('users')
+  const { data: users } = await (supabase
+    .from('users') as any)
     .select('id, email, email_preferences')
     .eq('email_preferences.weekly_digest', true)
 
   // Get this week's sales
-  const { data: sales } = await supabase
-    .from('events')
+  const { data: sales } = await (supabase
+    .from('events') as any)
     .select('*')
     .eq('moderation_status', 'approved')
     .gte('start_time', new Date().toISOString())
     .order('start_time')
 
   // Group by type
-  const yardSales = sales?.filter(s => s.type === 'yard_sale') || []
-  const estateSales = sales?.filter(s => s.type === 'estate_sale') || []
+  const yardSales = sales?.filter((s: any) => s.type === 'yard_sale') || []
+  const estateSales = sales?.filter((s: any) => s.type === 'estate_sale') || []
 
   // Send to each user
   for (const user of users || []) {

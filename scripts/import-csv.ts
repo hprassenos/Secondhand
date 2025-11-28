@@ -194,8 +194,8 @@ async function importFromCSV(filePath: string, dryRun: boolean = false) {
       featured: false,
     }
 
-    const { error } = await supabase
-      .from('listings')
+    const { error } = await (supabase
+      .from('listings') as any)
       .insert(listing)
 
     if (error) {

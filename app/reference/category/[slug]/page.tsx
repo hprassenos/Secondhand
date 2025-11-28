@@ -13,8 +13,8 @@ interface CategoryPageProps {
 export async function generateMetadata({
   params,
 }: CategoryPageProps): Promise<Metadata> {
-  const { data: category } = await supabase
-    .from('reference_categories')
+  const { data: category } = await (supabase
+    .from('reference_categories') as any)
     .select('*')
     .eq('slug', params.slug)
     .single()
@@ -38,8 +38,8 @@ export async function generateMetadata({
 }
 
 async function getCategory(slug: string) {
-  const { data, error } = await supabase
-    .from('reference_categories')
+  const { data, error } = await (supabase
+    .from('reference_categories') as any)
     .select('*')
     .eq('slug', slug)
     .single()
@@ -223,7 +223,7 @@ export default async function ReferenceCategoryPage({ params }: CategoryPageProp
         {/* Contribute CTA */}
         <div className="mt-16 bg-vintage-100 border border-vintage-300 rounded-lg p-8 text-center">
           <h2 className="text-2xl font-bold text-vintage-900 mb-3">
-            Know about a maker we're missing?
+            Know about a maker we&apos;re missing?
           </h2>
           <p className="text-vintage-700 mb-6 max-w-2xl mx-auto">
             Help expand our {category.name.toLowerCase()} reference library by submitting

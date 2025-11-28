@@ -161,7 +161,7 @@ export default async function ReferenceLibraryPage() {
           </h2>
           <p className="text-vintage-700 mb-6 max-w-2xl mx-auto">
             Help our community by submitting photos and information about makers,
-            patterns, or hallmarks you've researched.
+            patterns, or hallmarks you&apos;ve researched.
           </p>
           <Link href="/reference/contribute" className="btn-primary inline-block">
             Contribute to the Library

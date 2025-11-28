@@ -38,8 +38,7 @@ export default function ModerateGuestbookClient({
   const handleApprove = async (entryId: string) => {
     setProcessing(entryId)
 
-    const { error } = await supabase
-      .from('guestbook_entries')
+    const { error } = await (supabase.from('guestbook_entries') as any)
       .update({ moderation_status: 'approved' })
       .eq('id', entryId)
 
@@ -58,8 +57,7 @@ export default function ModerateGuestbookClient({
   const handleReject = async (entryId: string) => {
     setProcessing(entryId)
 
-    const { error } = await supabase
-      .from('guestbook_entries')
+    const { error } = await (supabase.from('guestbook_entries') as any)
       .update({ moderation_status: 'rejected' })
       .eq('id', entryId)
 

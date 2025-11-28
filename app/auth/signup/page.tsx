@@ -55,7 +55,7 @@ export default function SignupPage() {
           <div className="card text-center">
             <h2 className="text-2xl font-bold text-vintage-900 mb-4">Check your email!</h2>
             <p className="text-gray-600 mb-6">
-              We've sent you a confirmation link. Please check your email to verify your account.
+              We&apos;ve sent you a confirmation link. Please check your email to verify your account.
             </p>
             <Link href="/" className="btn-primary">
               Return to Home

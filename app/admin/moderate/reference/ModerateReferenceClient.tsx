@@ -42,7 +42,7 @@ export default function ModerateReferenceClient({
           .replace(/[^a-z0-9]+/g, '-')
           .replace(/^-|-$/g, '')
 
-        const { error } = await supabase.from('reference_makers').insert({
+        const { error } = await (supabase.from('reference_makers') as any).insert({
           category_id: data.category_id,
           name: data.name,
           slug: slug,
@@ -59,8 +59,8 @@ export default function ModerateReferenceClient({
 
         // Find or create maker
         let makerId: string | null = null
-        const { data: existingMaker } = await supabase
-          .from('reference_makers')
+        const { data: existingMaker } = await (supabase
+          .from('reference_makers') as any)
           .select('id')
           .ilike('name', data.maker_name)
           .single()
@@ -83,8 +83,8 @@ export default function ModerateReferenceClient({
           .replace(/^-|-$/g, '')
 
         // Insert pattern
-        const { data: newPattern, error: patternError } = await supabase
-          .from('reference_patterns')
+        const { data: newPattern, error: patternError } = await (supabase
+          .from('reference_patterns') as any)
           .insert({
             maker_id: makerId,
             name: data.pattern_name,
@@ -113,8 +113,8 @@ export default function ModerateReferenceClient({
             })
           )
 
-          const { error: imageError } = await supabase
-            .from('reference_images')
+          const { error: imageError } = await (supabase
+            .from('reference_images') as any)
             .insert(imageInserts)
 
           if (imageError) throw imageError
@@ -123,8 +123,8 @@ export default function ModerateReferenceClient({
         const data = submission.data as any
 
         // Find maker
-        const { data: existingMaker } = await supabase
-          .from('reference_makers')
+        const { data: existingMaker } = await (supabase
+          .from('reference_makers') as any)
           .select('id')
           .ilike('name', data.maker_name)
           .single()
@@ -135,7 +135,7 @@ export default function ModerateReferenceClient({
           return
         }
 
-        const { error } = await supabase.from('reference_hallmarks').insert({
+        const { error} = await (supabase.from('reference_hallmarks') as any).insert({
           maker_id: existingMaker.id,
           image_url: data.hallmark_image_url,
           description: data.description,
@@ -148,8 +148,8 @@ export default function ModerateReferenceClient({
       }
 
       // Mark submission as approved
-      const { error: updateError } = await supabase
-        .from('reference_submissions')
+      const { error: updateError } = await (supabase
+        .from('reference_submissions') as any)
         .update({ status: 'approved' })
         .eq('id', submission.id)
 
@@ -169,8 +169,8 @@ export default function ModerateReferenceClient({
   const handleReject = async (submissionId: string) => {
     setProcessing(submissionId)
 
-    const { error } = await supabase
-      .from('reference_submissions')
+    const { error } = await (supabase
+      .from('reference_submissions') as any)
       .update({
         status: 'rejected',
         reviewer_notes: rejectionNotes || null,

@@ -1,8 +1,10 @@
 import { createClient } from '@supabase/supabase-js'
 import { Database } from '@/types/database'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+// Use placeholder values for local builds without env vars
+// Real values will be provided by Vercel environment variables in production
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co'
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-anon-key'
 
 export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey)
 

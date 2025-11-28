@@ -143,17 +143,17 @@ export default function PrivacyPage() {
 
           <h3 className="text-xl font-semibold text-vintage-900 mt-6 mb-3">6.3 Marketing Communications</h3>
           <p className="text-gray-700">
-            You can opt out of promotional emails by clicking "unsubscribe" in any marketing email or
+            You can opt out of promotional emails by clicking &quot;unsubscribe&quot; in any marketing email or
             updating your communication preferences in your account.
           </p>
 
           <h3 className="text-xl font-semibold text-vintage-900 mt-6 mb-3">6.4 Do Not Track</h3>
           <p className="text-gray-700">
-            We currently do not respond to "Do Not Track" browser signals, but you can control cookies
+            We currently do not respond to &quot;Do Not Track&quot; browser signals, but you can control cookies
             through your browser settings.
           </p>
 
-          <h2 className="text-2xl font-bold text-vintage-900 mt-8 mb-4">7. Children's Privacy</h2>
+          <h2 className="text-2xl font-bold text-vintage-900 mt-8 mb-4">7. Children&apos;s Privacy</h2>
           <p className="text-gray-700">
             Our service is not intended for children under 13 years of age. We do not knowingly collect
             personal information from children under 13. If you believe we have collected information from
@@ -191,7 +191,7 @@ export default function PrivacyPage() {
           <h2 className="text-2xl font-bold text-vintage-900 mt-8 mb-4">11. Changes to This Privacy Policy</h2>
           <p className="text-gray-700">
             We may update this Privacy Policy from time to time. We will notify you of material changes
-            by posting the new policy on this page with an updated "Last Updated" date. Your continued
+            by posting the new policy on this page with an updated &quot;Last Updated&quot; date. Your continued
             use of the service after changes constitutes acceptance of the updated policy.
           </p>
 

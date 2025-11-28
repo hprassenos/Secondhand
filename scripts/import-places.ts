@@ -198,8 +198,8 @@ async function importPlaces(places: PlaceResult[], dryRun: boolean = false) {
     if (!listing) continue
 
     // Check if listing already exists
-    const { data: existing } = await supabase
-      .from('listings')
+    const { data: existing } = await (supabase
+      .from('listings') as any)
       .select('id, name')
       .eq('name', listing.name)
       .eq('address', listing.address)
@@ -212,8 +212,8 @@ async function importPlaces(places: PlaceResult[], dryRun: boolean = false) {
     }
 
     // Insert the listing
-    const { error } = await supabase
-      .from('listings')
+    const { error } = await (supabase
+      .from('listings') as any)
       .insert(listing)
 
     if (error) {

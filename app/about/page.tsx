@@ -29,8 +29,8 @@ export default function AboutPage() {
             and curious explorers with the antique shops, yard sales, and hidden gems in their communities.
           </p>
           <p className="text-lg text-gray-700">
-            Whether you're searching for a specific piece to complete your collection, furnishing your
-            home with unique character, or simply enjoying the thrill of the hunt, we're here to make
+            Whether you&apos;re searching for a specific piece to complete your collection, furnishing your
+            home with unique character, or simply enjoying the thrill of the hunt, we&apos;re here to make
             your vintage shopping experience easier, more organized, and more rewarding.
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function AboutPage() {
                 <div>
                   <h3 className="text-xl font-bold text-vintage-900 mb-2">Shared Knowledge</h3>
                   <p className="text-gray-700">
-                    From identifying hallmarks to sharing finds, we're building a community where
+                    From identifying hallmarks to sharing finds, we&apos;re building a community where
                     collectors help collectors learn and grow.
                   </p>
                 </div>
@@ -77,7 +77,7 @@ export default function AboutPage() {
                 <div>
                   <h3 className="text-xl font-bold text-vintage-900 mb-2">Smart Discovery</h3>
                   <p className="text-gray-700">
-                    Our tools help you plan efficient routes, find exactly what you're looking for,
+                    Our tools help you plan efficient routes, find exactly what you&apos;re looking for,
                     and never miss a sale in your area.
                   </p>
                 </div>
@@ -107,17 +107,17 @@ export default function AboutPage() {
           <div className="prose prose-vintage max-w-none text-gray-700">
             <p className="mb-4">
               Secondhand Finds was born from a simple frustration: weekend treasure hunting meant
-              juggling multiple websites, scribbled addresses, and hoping you didn't miss that one
+              juggling multiple websites, scribbled addresses, and hoping you didn&apos;t miss that one
               estate sale with the perfect mid-century dresser.
             </p>
             <p className="mb-4">
               We realized that vintage enthusiasts needed more than just listings – they needed a
               comprehensive platform that understood the unique needs of treasure hunters. From planning
-              multi-stop routes to building a reference library for identifying finds, we're creating
+              multi-stop routes to building a reference library for identifying finds, we&apos;re creating
               the tools we wished existed.
             </p>
             <p>
-              Today, we're proud to serve a growing community of collectors, decorators, resellers, and
+              Today, we&apos;re proud to serve a growing community of collectors, decorators, resellers, and
               curious explorers. Every shop listing, every yard sale post, and every guestbook entry
               adds to a living map of vintage treasures waiting to be discovered.
             </p>
@@ -141,7 +141,7 @@ export default function AboutPage() {
         <div className="card mb-12">
           <h2 className="text-3xl font-bold text-vintage-900 mb-4 text-center">Our Team</h2>
           <p className="text-center text-gray-700 mb-6">
-            We're a small but dedicated team of vintage enthusiasts, developers, and community builders
+            We&apos;re a small but dedicated team of vintage enthusiasts, developers, and community builders
             passionate about making treasure hunting accessible to everyone.
           </p>
           <p className="text-center text-gray-600 text-sm">

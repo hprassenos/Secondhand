@@ -19,8 +19,8 @@ export async function generateMetadata({
   const makerSlug = parts[0]
   const patternSlug = parts[1]
 
-  const { data: pattern } = await supabase
-    .from('reference_patterns')
+  const { data: pattern } = await (supabase
+    .from('reference_patterns') as any)
     .select(`
       *,
       maker:reference_makers(*),
@@ -64,16 +64,16 @@ async function getPattern(slug: string) {
 
   if (!makerSlug || !patternSlug) return null
 
-  const { data: maker } = await supabase
-    .from('reference_makers')
+  const { data: maker } = await (supabase
+    .from('reference_makers') as any)
     .select('id, slug')
     .eq('slug', makerSlug)
     .single()
 
   if (!maker) return null
 
-  const { data, error } = await supabase
-    .from('reference_patterns')
+  const { data, error } = await (supabase
+    .from('reference_patterns') as any)
     .select(`
       *,
       maker:reference_makers(*),

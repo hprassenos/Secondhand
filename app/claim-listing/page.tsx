@@ -61,8 +61,8 @@ function ClaimListingContent() {
       }
 
       // Update listing with claim
-      const { error: updateError } = await supabase
-        .from('listings')
+      const { error: updateError } = await (supabase
+        .from('listings') as any)
         .update({
           claimed: true,
           claimed_by: user.id,
@@ -93,7 +93,7 @@ function ClaimListingContent() {
             <BuildingStorefrontIcon className="h-16 w-16 text-vintage-600 mx-auto mb-4" />
             <h2 className="text-2xl font-bold text-vintage-900 mb-4">Claim Your Business Listing</h2>
             <p className="text-gray-600 mb-6">
-              Find your business in our directory and click "Claim This Listing" to get started.
+              Find your business in our directory and click &quot;Claim This Listing&quot; to get started.
             </p>
             <Link href="/directory" className="btn-primary">
               Browse Directory
@@ -127,7 +127,7 @@ function ClaimListingContent() {
             <CheckCircleIcon className="h-16 w-16 text-green-600 mx-auto mb-4" />
             <h2 className="text-3xl font-bold text-vintage-900 mb-4">Claim Submitted!</h2>
             <p className="text-gray-600 mb-6">
-              We've received your claim for <strong>{listing?.name}</strong>. Our team will review your
+              We&apos;ve received your claim for <strong>{listing?.name}</strong>. Our team will review your
               submission and contact you at <strong>{ownerEmail}</strong> within 1-2 business days.
             </p>
             <div className="space-y-3">
@@ -135,11 +135,11 @@ function ClaimListingContent() {
               <ul className="text-left max-w-md mx-auto space-y-2 text-gray-700">
                 <li className="flex items-start">
                   <span className="font-bold mr-2">1.</span>
-                  <span>We'll verify your ownership through the contact information you provided</span>
+                  <span>We&apos;ll verify your ownership through the contact information you provided</span>
                 </li>
                 <li className="flex items-start">
                   <span className="font-bold mr-2">2.</span>
-                  <span>Once verified, you'll get full control over your listing</span>
+                  <span>Once verified, you&apos;ll get full control over your listing</span>
                 </li>
                 <li className="flex items-start">
                   <span className="font-bold mr-2">3.</span>
@@ -232,7 +232,7 @@ function ClaimListingContent() {
                 placeholder="owner@yourbusiness.com"
               />
               <p className="text-xs text-gray-500 mt-1">
-                We'll send verification instructions to this email
+                We&apos;ll send verification instructions to this email
               </p>
             </div>
 

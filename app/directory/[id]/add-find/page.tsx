@@ -53,8 +53,8 @@ export default function AddFindPage() {
       if (twitter) socialLinks.twitter = twitter.replace('@', '')
 
       // Create guestbook entry
-      const { error: entryError } = await supabase
-        .from('guestbook_entries')
+      const { error: entryError } = await (supabase
+        .from('guestbook_entries') as any)
         .insert({
           listing_id: listingId,
           user_id: user.id,
@@ -168,7 +168,7 @@ export default function AddFindPage() {
 
               <p className="text-xs text-gray-500 mt-1">
                 For now, please upload your photos to an image hosting service (like Imgur) and paste the URLs here.
-                We'll add direct photo upload in a future update!
+                We&apos;ll add direct photo upload in a future update!
               </p>
             </div>
 

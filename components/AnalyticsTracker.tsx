@@ -43,7 +43,7 @@ export default function AnalyticsTracker({
 
       if (listingId && type === 'view') {
         // Track listing view
-        await supabase.rpc('track_listing_view', {
+        await (supabase as any).rpc('track_listing_view', {
           p_listing_id: listingId,
           p_visitor_id: sessionId,
           p_state: state,
@@ -52,19 +52,19 @@ export default function AnalyticsTracker({
         })
       } else if (listingId && type === 'click') {
         // Track click-through (website/phone)
-        await supabase
-          .from('listing_analytics')
+        await (supabase
+          .from('listing_analytics') as any)
           .update({
-            click_throughs: supabase.raw('click_throughs + 1')
+            click_throughs: (supabase as any).raw('click_throughs + 1')
           })
           .eq('listing_id', listingId)
           .eq('date', new Date().toISOString().split('T')[0])
       } else if (eventId && type === 'route_add') {
         // Track route addition
-        await supabase
-          .from('event_analytics')
+        await (supabase
+          .from('event_analytics') as any)
           .update({
-            route_adds: supabase.raw('route_adds + 1')
+            route_adds: (supabase as any).raw('route_adds + 1')
           })
           .eq('event_id', eventId)
           .eq('date', new Date().toISOString().split('T')[0])

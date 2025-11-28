@@ -70,10 +70,10 @@ export default function BannerAd({
         setAd(data)
 
         // Track impression
-        await supabase
-          .from('banner_ads')
-          .update({ impressions: data.impressions + 1 })
-          .eq('id', data.id)
+        await (supabase
+          .from('banner_ads') as any)
+          .update({ impressions: (data as any).impressions + 1 })
+          .eq('id', (data as any).id)
       }
     } catch (err) {
       console.error('Error loading banner ad:', err)
@@ -85,8 +85,8 @@ export default function BannerAd({
   const handleClick = async () => {
     if (ad) {
       // Track click
-      await supabase
-        .from('banner_ads')
+      await (supabase
+        .from('banner_ads') as any)
         .update({ clicks: ad.clicks + 1 })
         .eq('id', ad.id)
     }

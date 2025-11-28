@@ -163,13 +163,13 @@ export default async function CityPage({ params }: PageProps) {
               Guide to Antiquing in {cityFormatted}, {stateUpper}
             </h2>
             <p className="text-gray-700 mb-4">
-              {cityFormatted} is a treasure hunter's paradise with {listings.length} unique vintage shops and antique dealers.
+              {cityFormatted} is a treasure hunter&apos;s paradise with {listings.length} unique vintage shops and antique dealers.
               From elegant antique furniture to vintage clothing, rare collectibles to mid-century modern decor,
-              you'll find something special at every stop.
+              you&apos;ll find something special at every stop.
             </p>
 
             <h3 className="text-xl font-bold text-vintage-900 mb-3 mt-6">
-              What You'll Find in {cityFormatted}
+              What You&apos;ll Find in {cityFormatted}
             </h3>
             <p className="text-gray-700 mb-4">
               Our {cityFormatted} shops specialize in:
@@ -189,7 +189,7 @@ export default async function CityPage({ params }: PageProps) {
             <p className="text-gray-700">
               Most antique shops in {cityFormatted} are open weekends and by appointment. Check individual
               shop hours before visiting. Many dealers also participate in estate sales and special events
-              throughout the year. Don't forget to check our <Link href="/yard-sales" className="text-vintage-600 hover:text-vintage-700">yard sales</Link> and <Link href="/estate-sales" className="text-vintage-600 hover:text-vintage-700">estate sales</Link> sections
+              throughout the year. Don&apos;t forget to check our <Link href="/yard-sales" className="text-vintage-600 hover:text-vintage-700">yard sales</Link> and <Link href="/estate-sales" className="text-vintage-600 hover:text-vintage-700">estate sales</Link> sections
               for upcoming opportunities to find treasures in {cityFormatted}!
             </p>
           </div>

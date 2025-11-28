@@ -108,8 +108,8 @@ export default function ReferenceContributeClient({
       }
 
       // Submit to database
-      const { error: submitError } = await supabase
-        .from('reference_submissions')
+      const { error: submitError } = await (supabase
+        .from('reference_submissions') as any)
         .insert({
           submitted_by: user.id,
           submission_type: submissionType,
@@ -357,7 +357,7 @@ export default function ReferenceContributeClient({
                   className="w-full border border-vintage-300 rounded-lg px-4 py-2"
                 />
                 <p className="text-xs text-gray-500 mt-1">
-                  Link to an image of the maker's logo
+                  Link to an image of the maker&apos;s logo
                 </p>
               </div>
             </>

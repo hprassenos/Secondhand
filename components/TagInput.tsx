@@ -33,8 +33,8 @@ export default function TagInput({
     }
 
     const fetchSuggestions = async () => {
-      const { data, error } = await supabase
-        .from('tags')
+      const { data, error } = await (supabase
+        .from('tags') as any)
         .select('*')
         .ilike('name', `${input}%`)
         .order('usage_count', { ascending: false })
@@ -43,7 +43,7 @@ export default function TagInput({
       if (!error && data) {
         // Filter out already selected tags
         const filtered = data.filter(
-          tag => !selectedTags.find(t => t.id === tag.id)
+          (tag: any) => !selectedTags.find((t: any) => t.id === tag.id)
         )
         setSuggestions(filtered)
       }
@@ -82,8 +82,8 @@ export default function TagInput({
       const tagName = tag.trim().toLowerCase()
 
       // Check if tag already exists
-      const { data: existingTag } = await supabase
-        .from('tags')
+      const { data: existingTag } = await (supabase
+        .from('tags') as any)
         .select('*')
         .eq('name', tagName)
         .single()
@@ -92,8 +92,8 @@ export default function TagInput({
         tagToAdd = existingTag
       } else {
         // Create new tag
-        const { data: newTag, error } = await supabase
-          .from('tags')
+        const { data: newTag, error } = await (supabase
+          .from('tags') as any)
           .insert({ name: tagName })
           .select()
           .single()

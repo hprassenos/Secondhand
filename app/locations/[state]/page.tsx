@@ -11,8 +11,8 @@ interface PageProps {
 }
 
 async function getCitiesInState(state: string) {
-  const { data, error } = await supabase
-    .from('listings')
+  const { data, error } = await (supabase
+    .from('listings') as any)
     .select('city, id, name, type')
     .ilike('state', state)
 
@@ -21,7 +21,7 @@ async function getCitiesInState(state: string) {
   }
 
   // Group by city
-  const cityCounts = data.reduce((acc: any, listing) => {
+  const cityCounts = data.reduce((acc: any, listing: any) => {
     if (!acc[listing.city]) {
       acc[listing.city] = []
     }
@@ -133,8 +133,8 @@ export default async function StatePage({ params }: PageProps) {
             </h2>
             <p className="text-gray-700 mb-4">
               {stateUpper} is home to some of the finest antique shops, vintage stores, and collectible dealers in the country.
-              Whether you're hunting for mid-century modern furniture, vintage clothing, antique glassware, or rare collectibles,
-              you'll find curated selections at shops throughout the state.
+              Whether you&apos;re hunting for mid-century modern furniture, vintage clothing, antique glassware, or rare collectibles,
+              you&apos;ll find curated selections at shops throughout the state.
             </p>
             <h3 className="text-xl font-bold text-vintage-900 mb-3 mt-6">
               Popular Cities for Antiquing in {stateUpper}

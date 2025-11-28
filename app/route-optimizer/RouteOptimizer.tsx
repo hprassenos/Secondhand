@@ -178,7 +178,7 @@ export default function RouteOptimizer() {
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-vintage-900 mb-2">Route Optimizer</h1>
           <p className="text-gray-600">
-            Plan your perfect treasure hunting route. We'll optimize by time and suggest shops along the way!
+            Plan your perfect treasure hunting route. We&apos;ll optimize by time and suggest shops along the way!
           </p>
         </div>
 

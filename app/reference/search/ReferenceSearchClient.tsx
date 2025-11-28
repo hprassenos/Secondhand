@@ -52,7 +52,7 @@ export default function ReferenceSearchClient({
 
     try {
       // Use the search function from the database
-      const { data, error } = await supabase.rpc('search_reference_library', {
+      const { data, error } = await (supabase as any).rpc('search_reference_library', {
         search_query: searchQuery,
         category_filter: selectedCategory,
         limit_results: 50,
@@ -66,7 +66,7 @@ export default function ReferenceSearchClient({
       }
 
       // Log the search
-      await supabase.from('reference_search_log').insert({
+      await (supabase.from('reference_search_log') as any).insert({
         search_query: searchQuery,
         category_id: selectedCategory,
         results_count: data?.length || 0,
@@ -198,7 +198,7 @@ export default function ReferenceSearchClient({
         ) : results.length === 0 ? (
           <div className="text-center py-12">
             <p className="text-lg text-vintage-700 mb-4">
-              No results found for "{query}"
+              No results found for &quot;{query}&quot;
             </p>
             <p className="text-gray-600 mb-6">
               Try different keywords or browse by category
@@ -218,8 +218,8 @@ export default function ReferenceSearchClient({
         ) : (
           <>
             <div className="mb-6 text-vintage-700">
-              Found {results.length} result{results.length !== 1 ? 's' : ''} for "
-              {query}"
+              Found {results.length} result{results.length !== 1 ? 's' : ''} for &quot;
+              {query}&quot;
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
