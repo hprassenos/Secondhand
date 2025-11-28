@@ -21,16 +21,14 @@ export default function Navigation() {
         <div className="flex justify-between h-20 md:h-28">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <div className="bg-white">
-                <Image
-                  src="/images/logo-simplified.png"
-                  alt="Secondhand Empire"
-                  width={180}
-                  height={90}
-                  className="h-[50px] w-auto md:h-[90px]"
-                  priority
-                />
-              </div>
+              <Image
+                src="/images/logo-simplified.png"
+                alt="Secondhand Empire"
+                width={180}
+                height={90}
+                className="h-[50px] w-auto md:h-[90px]"
+                priority
+              />
             </Link>
           </div>
 
