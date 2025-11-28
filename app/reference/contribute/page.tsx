@@ -5,7 +5,7 @@ import { getCurrentUser } from '@/lib/supabase'
 import ReferenceContributeClient from './ReferenceContributeClient'
 
 export const metadata: Metadata = {
-  title: 'Contribute to Reference Library | Secondhand Finds',
+  title: 'Contribute to Reference Library | Secondhand Empire',
   description:
     'Help build our reference library by submitting information about makers, patterns, and hallmarks.',
 }

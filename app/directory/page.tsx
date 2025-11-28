@@ -3,7 +3,7 @@ import DirectoryClient from './DirectoryClient'
 import type { Listing } from '@/types'
 
 export const metadata = {
-  title: 'Shop Directory - Secondhand Finds',
+  title: 'Shop Directory - Secondhand Empire',
   description: 'Browse antique shops, thrift stores, consignment shops, and flea markets',
 }
 

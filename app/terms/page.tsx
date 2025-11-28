@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Terms of Service - Secondhand Finds',
-  description: 'Terms of Service for Secondhand Finds vintage marketplace',
+  title: 'Terms of Service - Secondhand Empire',
+  description: 'Terms of Service for Secondhand Empire vintage marketplace',
 }
 
 export default function TermsPage() {
@@ -16,13 +16,13 @@ export default function TermsPage() {
 
         <div className="card prose prose-vintage max-w-none">
           <p className="text-gray-700 mb-6">
-            Welcome to Secondhand Finds. By accessing or using our website and services, you agree to be
+            Welcome to Secondhand Empire. By accessing or using our website and services, you agree to be
             bound by these Terms of Service. Please read them carefully.
           </p>
 
           <h2 className="text-2xl font-bold text-vintage-900 mt-8 mb-4">1. Acceptance of Terms</h2>
           <p className="text-gray-700">
-            By using Secondhand Finds, you agree to these Terms of Service, our Privacy Policy, and all
+            By using Secondhand Empire, you agree to these Terms of Service, our Privacy Policy, and all
             applicable laws and regulations. If you do not agree with any of these terms, you are
             prohibited from using or accessing this site.
           </p>
@@ -56,7 +56,7 @@ export default function TermsPage() {
 
           <h3 className="text-xl font-semibold text-vintage-900 mt-6 mb-3">4.1 Your Content</h3>
           <p className="text-gray-700 mb-3">
-            When you post listings, guestbook entries, or other content on Secondhand Finds, you retain
+            When you post listings, guestbook entries, or other content on Secondhand Empire, you retain
             ownership of your content but grant us a worldwide, non-exclusive, royalty-free license to
             use, display, reproduce, and distribute your content on our platform.
           </p>
@@ -79,7 +79,7 @@ export default function TermsPage() {
 
           <h2 className="text-2xl font-bold text-vintage-900 mt-8 mb-4">5. Listings and Accuracy</h2>
           <p className="text-gray-700 mb-3">
-            While we strive to provide accurate information, Secondhand Finds does not guarantee the
+            While we strive to provide accurate information, Secondhand Empire does not guarantee the
             accuracy, completeness, or reliability of any listings, business information, or user content.
           </p>
           <p className="text-gray-700">
@@ -89,7 +89,7 @@ export default function TermsPage() {
 
           <h2 className="text-2xl font-bold text-vintage-900 mt-8 mb-4">6. Transactions</h2>
           <p className="text-gray-700 mb-3">
-            Secondhand Finds is a directory and information platform only. We do not:
+            Secondhand Empire is a directory and information platform only. We do not:
           </p>
           <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
             <li>Facilitate or process transactions between users and shops</li>
@@ -112,7 +112,7 @@ export default function TermsPage() {
 
           <h2 className="text-2xl font-bold text-vintage-900 mt-8 mb-4">8. Intellectual Property</h2>
           <p className="text-gray-700">
-            The Secondhand Finds name, logo, and all original content, features, and functionality are
+            The Secondhand Empire name, logo, and all original content, features, and functionality are
             owned by us and are protected by international copyright, trademark, and other intellectual
             property laws.
           </p>
@@ -132,14 +132,14 @@ export default function TermsPage() {
 
           <h2 className="text-2xl font-bold text-vintage-900 mt-8 mb-4">11. Limitation of Liability</h2>
           <p className="text-gray-700">
-            To the maximum extent permitted by law, Secondhand Finds shall not be liable for any indirect,
+            To the maximum extent permitted by law, Secondhand Empire shall not be liable for any indirect,
             incidental, special, consequential, or punitive damages resulting from your use of or inability
             to use the service.
           </p>
 
           <h2 className="text-2xl font-bold text-vintage-900 mt-8 mb-4">12. Indemnification</h2>
           <p className="text-gray-700">
-            You agree to indemnify and hold harmless Secondhand Finds from any claims, damages, losses,
+            You agree to indemnify and hold harmless Secondhand Empire from any claims, damages, losses,
             liabilities, and expenses arising from your use of the service or violation of these terms.
           </p>
 
@@ -167,12 +167,12 @@ export default function TermsPage() {
             If you have questions about these Terms, please contact us at:
           </p>
           <p className="text-gray-700 mt-2">
-            Email: <a href="mailto:legal@secondhandfinds.com" className="text-vintage-600 hover:text-vintage-700">legal@secondhandfinds.com</a>
+            Email: <a href="mailto:legal@secondhandempire.com" className="text-vintage-600 hover:text-vintage-700">legal@secondhandempire.com</a>
           </p>
 
           <div className="mt-12 pt-8 border-t border-vintage-200">
             <p className="text-sm text-gray-600">
-              By using Secondhand Finds, you acknowledge that you have read, understood, and agree to be
+              By using Secondhand Empire, you acknowledge that you have read, understood, and agree to be
               bound by these Terms of Service.
             </p>
             <div className="mt-4">

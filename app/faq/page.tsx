@@ -14,12 +14,12 @@ const faqs: FAQItem[] = [
   // General
   {
     category: 'General',
-    question: 'What is Secondhand Finds?',
-    answer: 'Secondhand Finds is a comprehensive directory and platform for vintage enthusiasts. We help you discover antique shops, thrift stores, yard sales, estate sales, and connect with a community of collectors.',
+    question: 'What is Secondhand Empire?',
+    answer: 'Secondhand Empire is a comprehensive directory and platform for vintage enthusiasts. We help you discover antique shops, thrift stores, yard sales, estate sales, and connect with a community of collectors.',
   },
   {
     category: 'General',
-    question: 'Is Secondhand Finds free to use?',
+    question: 'Is Secondhand Empire free to use?',
     answer: 'Yes! Browsing listings, searching for shops, and viewing yard/estate sales is completely free. Shop owners can claim their listings for free as well. We may offer premium features in the future.',
   },
   {
@@ -138,7 +138,7 @@ const faqs: FAQItem[] = [
   {
     category: 'Technical',
     question: 'What browsers do you support?',
-    answer: 'Secondhand Finds works on all modern browsers including Chrome, Firefox, Safari, and Edge. We also have a mobile-responsive design for browsing on phones and tablets.',
+    answer: 'Secondhand Empire works on all modern browsers including Chrome, Firefox, Safari, and Edge. We also have a mobile-responsive design for browsing on phones and tablets.',
   },
 
   // Reference Library
@@ -184,7 +184,7 @@ export default function FAQPage() {
             Frequently Asked Questions
           </h1>
           <p className="text-xl text-gray-600">
-            Find answers to common questions about Secondhand Finds
+            Find answers to common questions about Secondhand Empire
           </p>
         </div>
 

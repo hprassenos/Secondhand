@@ -6,8 +6,19 @@ import Navigation from '@/components/Navigation'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Secondhand Finds - Vintage & Antique Marketplace',
+  title: 'Secondhand Empire - Vintage & Antique Marketplace',
   description: 'Discover antique shops, yard sales, estate sales, and vintage treasures in your area',
+  icons: {
+    icon: [
+      { url: '/images/favicon.ico' },
+      { url: '/images/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/images/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/images/apple-touch-icon.png' },
+    ],
+  },
+  manifest: '/images/site.webmanifest',
 }
 
 export default function RootLayout({
@@ -26,7 +37,7 @@ export default function RootLayout({
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div>
-                <h3 className="font-bold text-lg mb-4">Secondhand Finds</h3>
+                <h3 className="font-bold text-lg mb-4">Secondhand Empire</h3>
                 <p className="text-sm text-vintage-300">
                   Your guide to vintage treasures and antique discoveries
                 </p>
@@ -58,7 +69,7 @@ export default function RootLayout({
               </div>
             </div>
             <div className="border-t border-vintage-700 mt-8 pt-8 text-center text-sm text-vintage-400">
-              <p>&copy; {new Date().getFullYear()} Secondhand Finds. All rights reserved.</p>
+              <p>&copy; {new Date().getFullYear()} Secondhand Empire. All rights reserved.</p>
             </div>
           </div>
         </footer>

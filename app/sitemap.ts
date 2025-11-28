@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { supabase } from '@/lib/supabase'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://secondhandfinds.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://secondhandempire.com'
 
   // Return minimal sitemap if Supabase credentials are not available (e.g., during local builds)
   if (!process.env.NEXT_PUBLIC_SUPABASE_URL) {

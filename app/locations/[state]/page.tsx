@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: PageProps) {
   const state = params.state.toUpperCase()
 
   return {
-    title: `Antique Shops in ${state} - Vintage Stores & Thrift Shops | Secondhand Finds`,
+    title: `Antique Shops in ${state} - Vintage Stores & Thrift Shops | Secondhand Empire`,
     description: `Find the best antique shops, vintage stores, and thrift shops in ${state}. Browse our directory of curated vintage treasures and collectibles.`,
   }
 }

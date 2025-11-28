@@ -3,7 +3,7 @@ import { supabase, getCurrentUser } from '@/lib/supabase'
 import AdminDashboard from './AdminDashboard'
 
 export const metadata = {
-  title: 'Admin Dashboard - Secondhand Finds',
+  title: 'Admin Dashboard - Secondhand Empire',
 }
 
 async function checkAdminAccess() {
